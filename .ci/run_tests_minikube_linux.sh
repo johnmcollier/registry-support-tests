@@ -3,6 +3,8 @@
 # NOTE: This script assumes that minikube is installed and running, and using the docker driver on Linux
 # Due to networking issues with the docker driver and ingress on macOS/Windows, this script must be run on Linux
 
+# Share docker env with Minikube
+eval $(minikube docker-env)
 
 # exit immediately when a command fails
 set -e
