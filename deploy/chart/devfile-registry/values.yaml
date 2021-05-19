@@ -10,7 +10,7 @@
 global:
   ingress:
     class: 'nginx'
-    domain: 192.168.2.1.nip.io
+    domain: 192.168.64.4.nip.io
     secretName: ''
   isOpenShift: false
 
@@ -27,5 +27,5 @@ ociRegistry:
   memoryLimit: 256Mi
 
 persistence:
-  enabled: true
+  enabled: false
   size: 1Gi

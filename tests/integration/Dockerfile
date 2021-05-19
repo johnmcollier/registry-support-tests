@@ -16,6 +16,6 @@ COPY . .
 RUN cd /registry-test/registry-library && ./build.sh && cp /registry-test/registry-library/registry-library /usr/local/bin/registry-library
 
 # Build the test binary
-RUN build.sh
+RUN /registry-test/build.sh
 
 CMD /registry-test/devfileregistry-integration
