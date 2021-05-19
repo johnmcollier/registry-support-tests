@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # NOTE: This script assumes that minikube is installed and running, and using the docker driver on Linux
 # Due to networking issues with the docker driver and ingress on macOS/Windows, this script must be run on Linux
