@@ -23,7 +23,7 @@ docker build -t devfile-registry-test:latest ./tests/registry/
 # Use the test registry image built in the previous step.
 # Since minikube is running on Docker, we can specify a local image NOT pushed up to a registry
 # This saves us a fair bit of hassle with having to dynamically push the test image to a container registry
-helm install devfile-registry ./deploy/chart/devfile-registry --set global.ingress.domain="${minikube ip}.nip.io" \
+helm install devfile-registry ./deploy/chart/devfile-registry --set global.ingress.domain="$(minikube ip).nip.io" \
 	--set devfileIndex.image=devfile-registry-test \
 	--set devfileIndex.tag=latest \
 	--set devfileIndex.imagePullPolicy=Never
