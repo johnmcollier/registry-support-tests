@@ -29,7 +29,11 @@ helm install devfile-registry ./deploy/chart/devfile-registry --set global.ingre
 	--set devfileIndex.imagePullPolicy=Never
 
 # Wait for the registry to become ready
-kubectl wait deploy/devfile-registry --for=condition=Available --timeout=600s
+kubectl wait deploy/devfile-registry --for=condition=Available --timeout=300s
+if [ $? -ne 0 ]; then
+  kubectl get pods
+  kubectl describe pods
+fi
 
 # Get the ingress URL for the registry
 export REGISTRY=http://$(kubectl get ingress devfile-registry -o jsonpath="{.spec.rules[0].host}")
