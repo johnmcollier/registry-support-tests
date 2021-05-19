@@ -29,7 +29,7 @@ helm install devfile-registry ./deploy/chart/devfile-registry --set global.ingre
 	--set devfileIndex.imagePullPolicy=Never
 
 # Wait for the registry to become ready
-kubectl wait deploy/devfile-registry --for=condition=Available --timeout=300s
+kubectl wait deploy/devfile-registry --for=condition=Available --timeout=600s
 if [ $? -ne 0 ]; then
   kubectl get pods
   kubectl describe pods
